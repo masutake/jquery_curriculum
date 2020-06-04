@@ -56,6 +56,22 @@
       // .next() 要素の隣の要素を取得します。これは使わなくてもできます。
       // .children() 要素の子要素を取得します。
       // .stop() 現在動作中のアニメーション処理を全て中止します。
+      $(function () {
+        $('.menu__list__title').hover(function() {
+          $('.menu__list__childList').stop().slideDown('menu__list__childList__title');
+        }, function() {
+          $('.menu__list__childList').stop().slideUp('menu__list__childList__title');
+        });
+      });
+
+        //試行錯誤中　slideupの動作×　紐づけ〇
+        //  $('.menu__list').children('li').hover(function() {
+        //    var num = $(this).index();
+        //    $('.menu__list__childList').eq(num).stop().slideDown('menu__list__childList__title');
+        //  }, function() {
+        //    $('.menu__list__childList').eq(num).stop().slideUp('menu__list__childList__title');
+        //  });
+     
     </script>
   </body>
 </html>
