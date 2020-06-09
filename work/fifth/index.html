@@ -25,12 +25,12 @@
           </select>
         </div>
         <ul class="list">
-          <li data-category-type="css">
+          <!-- <li data-category-type="css">
             <a href="http://getbootstrap.com/" class="article">
               <i class="article-icon is-bootstrap"></i>
               <p class="article-name">Bootstrap</p>
             </a>
-          </li>
+          </li> -->
           <li data-category-type="ruby">
             <a href="http://rubyonrails.org/" class="article">
               <i class="article-icon is-ruby-on-rails"></i>
@@ -98,20 +98,45 @@
       // .change() セレクトボックスの値の変更をキャッチする関数
       // $().each() DOM要素を1つずつループ処理をする（ループ内で$(this)を使うと要素がひとつずつ取得できる）
     
-    $(function() {
-      $('.select').click(function() {
-        $(this).change(function() {
-          var num = $(this).val();
-          var num2 = $('.list').children('li').data('category-type');
 
-          if (num == num2) {
-            $('.list').children('li').show();
-          } else if (num !=num2) {
-            $('.list').children('li').hide();
-          }
+      //  困ったら日本語にして洗い出してみる
+      // selectクリック
+        //click function
+        //change
+        
+      // セレクトボックスの中身を選択する
+        //val
+      //　選択したものが下のボックスで表示される
+        //data 
+        //hide
+        //show
+
+
+    $(function() {
+      
+        $('.select').change(function() {
+          var num = $(this).val();
+          console.log(num);
+          //var num2 = $('.list').children('li').data('category-type');
+          //console.log(num2);
+          var num2 = $('.list').children('li');
+          var num3 = $(num2).each(function() {
+            $(this).data('category-type');
+          });
+          console.log(num3);
+          
+          
+
+          
+
+          // if (num == num3) {
+          //   $('.list').children('li').show();
+          // } else if (num !=num3) {
+          //   $('.list').children('li').hide();
+          // }
 
         });
-      });
+      
     });
     
     
