@@ -25,12 +25,12 @@
           </select>
         </div>
         <ul class="list">
-          <!-- <li data-category-type="css">
+          <li data-category-type="css">
             <a href="http://getbootstrap.com/" class="article">
               <i class="article-icon is-bootstrap"></i>
               <p class="article-name">Bootstrap</p>
             </a>
-          </li> -->
+          </li>
           <li data-category-type="ruby">
             <a href="http://rubyonrails.org/" class="article">
               <i class="article-icon is-ruby-on-rails"></i>
@@ -110,10 +110,13 @@
         //data 
         //hide
         //show
+      //選択したもの以外を消す
+      //選択したものだけを表示する
+      //allのときは全部表示する
+
 
 
     $(function() {
-      
         $('.select').change(function() {
           var num = $(this).val();
           console.log(num);
@@ -122,8 +125,22 @@
           var num2 = $('.list').children('li');
           var num3 = $(num2).each(function() {
             $(this).data('category-type');
+            console.log($(this).data('category-type'));
+         
+            
+          if (num3 == 'all') {
+            $('list').show('1000')
+          } else  {
+            
+          }
+
+
           });
-          console.log(num3);
+
+
+          
+
+          });
           
           
 
@@ -136,8 +153,6 @@
           // }
 
         });
-      
-    });
     
     
     
