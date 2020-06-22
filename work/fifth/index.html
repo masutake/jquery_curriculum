@@ -111,36 +111,48 @@
         //hide
         //show
       //選択したもの以外を消す
+      
       //選択したものだけを表示する
+
       //allのときは全部表示する
 
 
 
     $(function() {
         $('.select').change(function() {
-          var num = $(this).val();
-          console.log(num);
+          var value = $(this).val();
+          console.log(value);
           //var num2 = $('.list').children('li').data('category-type');
           //console.log(num2);
-          var num2 = $('.list').children('li');
-          var num3 = $(num2).each(function() {
-            $(this).data('category-type');
-            console.log($(this).data('category-type'));
+          var list = $('.list').children('li');
+
+          //変数名を適したものに変える　 変数名に適さないものもある　変数名から中身を予想できるように　他に人が見て分かりやすいよう　
+        
+
+          if (value === 'all') {
+            //イコール三つと二つの違い　使い方の差
+            //調べたうえでどっちを使うべきか
+            list.show();
+          } else {
+
+            $(list).each(function(index,element) {
+              //functionの中に引数　二個　それぞれ何を意味するか
+              //かつそれを使ったコードにする
+              var type = $(this).data('category-type');
+              console.log($(this).data('category-type'));
          
-            
-          if (num3 == 'all') {
-            $('list').show('1000')
-          } else  {
-            
+              if (value === type) {
+                $(this).show(); //thisは今処理してるもの
+              } else {
+                $(this).hide();
+              }
+
+
+             });
+
           }
-
-
-          });
-
-
-          
-
-          });
+         
+        });
           
           
 
