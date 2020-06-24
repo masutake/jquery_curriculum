@@ -135,19 +135,19 @@
             list.show();
           } else {
 
-            $(list).each(function(index,element) {
+            $(list).each(function(index,category) {
               //functionの中に引数　二個　それぞれ何を意味するか
               //かつそれを使ったコードにする
 
-              console.log(element);
+              console.log(category);
 
-              var type = $(element).data('category-type');
+              var type = $(category).data('category-type');
               //console.log($(element).data('category-type'));
          
               if (value === type) {
-                $(this).show(); //thisは今処理してるもの
+                $(category).show(); //thisは今処理してるもの
               } else {
-                $(this).hide();
+                $(category).hide();
               }
 
 
