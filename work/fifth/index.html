@@ -138,8 +138,11 @@
             $(list).each(function(index,element) {
               //functionの中に引数　二個　それぞれ何を意味するか
               //かつそれを使ったコードにする
-              var type = $(this).data('category-type');
-              console.log($(this).data('category-type'));
+
+              console.log(element);
+
+              var type = $(element).data('category-type');
+              //console.log($(element).data('category-type'));
          
               if (value === type) {
                 $(this).show(); //thisは今処理してるもの
